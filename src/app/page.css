@@ -1,0 +1,17 @@
+.btn,
+.nav {
+  transition: 200ms;
+}
+
+.btn:hover {
+  box-shadow: 0 0 200px 20px #7afff48a;
+  transform: scale(1.1);
+  transition: 200ms;
+  transition-duration: 200ms;
+}
+
+.nav:hover {
+  transform: scale(1.1);
+  transition: 200ms;
+  transition-duration: 200ms;
+}
