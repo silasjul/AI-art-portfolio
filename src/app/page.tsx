@@ -12,7 +12,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 export default function Home() {
   return (
     <ReactLenis root>
-      {/* <Presloader /> */}
+      <Presloader />
       <Image
         className="absolute left-1/2 translate-x-[-50%] top-0 z-[-5] pointer-events-none"
         src="/Ellipse.png"
