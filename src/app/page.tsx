@@ -2,7 +2,7 @@ import { caviat, playfair } from "./meta";
 import Image from "next/image";
 import "./page.css";
 import Stairs from "@/components/ui/stairs";
-import Presloader from "@/components/ui/preloader";
+import Preloader from "@/components/ui/preloader";
 import NavBar from "@/components/ui/navBar";
 import Title from "@/components/ui/title";
 import ImageGallery from "@/components/ui/imageGallery";
@@ -12,7 +12,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 export default function Home() {
   return (
     <ReactLenis root>
-      <Presloader />
+      <Preloader />
       <Image
         className="absolute left-1/2 translate-x-[-50%] top-0 z-[-5] pointer-events-none"
         src="/Ellipse.png"

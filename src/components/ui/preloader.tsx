@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-export default function Presloader() {
+export default function Preloader() {
   const left = useRef<HTMLDivElement>(null);
   const right = useRef<HTMLDivElement>(null);
   const textContainer = useRef<HTMLDivElement>(null);
@@ -47,7 +47,7 @@ export default function Presloader() {
         .to(
           left.current,
           {
-            x: "-100%",
+            x: "-105%",
             duration: duration,
             ease: "power3.inOut",
           },
@@ -56,7 +56,7 @@ export default function Presloader() {
         .to(
           right.current,
           {
-            x: "100%",
+            x: "105%",
             duration: duration,
             ease: "power3.inOut",
           },
@@ -68,7 +68,7 @@ export default function Presloader() {
 
   return (
     <>
-      <div className="pageLoader absolute h-screen w-screen top-0 left-0 z-10 pointer-events-none overflow-hidden">
+      <div className="pageLoader absolute h-screen w-full top-0 left-0 z-10 pointer-events-none overflow-hidden">
         <div
           ref={left}
           className="absolute h-screen w-1/2 bg-white bottom-0 left-0"
@@ -80,7 +80,7 @@ export default function Presloader() {
       </div>
       <p
         ref={textContainer}
-        className="z-20 text-lg absolute top-0 left-0 w-screen h-screen flex items-center pointer-events-none justify-center"
+        className="z-20 text-lg absolute top-0 left-0 w-full h-screen flex items-center pointer-events-none justify-center"
       >
         {loadingText.split("").map((char, idx) => (
           <span className="whitespace-pre opacity-0" key={idx}>
