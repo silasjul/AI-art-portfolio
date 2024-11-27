@@ -12,7 +12,7 @@ export const caviat = Caveat({ subsets: ["latin"] });
 
 export const playfair = Playfair_Display({ weight: "500", subsets: ["latin"] });
 
-export const loRes = localFont({ src: "./fonts/loRes.woff2" });
+export const loRes = localFont({ src: "./fonts/lores.woff2" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
