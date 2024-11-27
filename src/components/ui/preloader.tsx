@@ -79,7 +79,10 @@ export default function Preloader() {
   const loadingText = "Bringing inspiration to life... one project at a time";
 
   return (
-    <div className="absolute h-screen w-full top-0 left-0 z-[5000] pointer-events-none">
+    <div
+      onLoad={() => lenis?.scrollTo(0)}
+      className="absolute h-screen w-full top-0 left-0 z-[5000] pointer-events-none"
+    >
       <div
         onLoad={() => lenis?.stop()}
         className="pageLoader absolute h-screen w-full top-0 left-0 z-30 pointer-events-none overflow-hidden"

@@ -13,7 +13,7 @@ export const caviat = Caveat({ subsets: ["latin"] });
 export const playfair = Playfair_Display({ weight: "500", subsets: ["latin"] });
 
 export const loRes = localFont({
-  src: "./fonts/lores.woff2",
+  src: "./fonts/LoRes.woff2",
   weight: "400",
   style: "normal",
 });

@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { loRes } from "@/app/meta";
+import { useLenis } from "lenis/react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ImageGallery() {
@@ -22,12 +23,16 @@ export default function ImageGallery() {
     return elementCenter < viewportCenter; // Return true if the element's center is to the left of the viewport's center
   };
 
+  const lenis = useLenis();
+
   useEffect(() => {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
+      lenis?.scrollTo(0);
     };
     window.onload = function () {
       window.scrollTo(0, 0);
+      lenis?.scrollTo(0);
     };
   }, []);
 
@@ -116,15 +121,13 @@ export default function ImageGallery() {
         ref={marqueeRef}
         className={
           loRes.className +
-          " fixed whitespace-nowrap top-1/2 left-[300vw] text-5xl -translate-x-1/2 -translate-y-1/2 text-white z-50 marquee"
+          " fixed whitespace-nowrap top-1/2 left-[70vw] text-5xl -translate-x-1/2 -translate-y-1/2 text-white z-50 marquee"
         }
       >
-        Welcome to a world where the boundaries between reality and imagination
-        blur. Immerse yourself in bold, futuristic digital art that tells
-        stories of distant galaxies, advanced civilizations, and the evolving
-        relationship between humanity and technology. Each piece invites you to
-        explore a new dimension of creativity, pushing the limits of what's
-        possible.
+        Explore bold, futuristic digital worlds as you scroll—each piece a
+        portal to distant galaxies, advanced civilizations, and the evolving
+        fusion of humanity and technology. Let the art transform your space and
+        ignite your imagination.
       </p>
       <div
         ref={imagesRef}
