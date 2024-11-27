@@ -21,7 +21,7 @@ export default function ContactBtn() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "center center",
-        end: "+=250",
+        end: "+=200",
         scrub: true,
       },
     });
@@ -30,7 +30,7 @@ export default function ContactBtn() {
   return (
     <div
       ref={containerRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none flex justify-center"
+      className="fixed top-0 left-0 w-full h-full pointer-events-none flex justify-center z-[400]"
     >
       <button
         ref={btnRef}

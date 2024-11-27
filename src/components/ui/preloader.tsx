@@ -1,20 +1,32 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useLenis } from "lenis/react";
 
 export default function Preloader() {
+  const [scroll, setScroll] = useState(false);
+
+  const lenis = useLenis();
+  if (scroll) lenis?.start();
+  else lenis?.stop();
+
   const left = useRef<HTMLDivElement>(null);
   const right = useRef<HTMLDivElement>(null);
   const textContainer = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const duration = 0.8; // seconds
-
     if (textContainer.current)
       gsap
-        .timeline({ delay: 0.5 })
+        .timeline({
+          delay: 0.5,
+          onComplete: () => {
+            setScroll(true);
+            console.log("ended");
+          },
+        })
         .to(textContainer.current.children, {
           opacity: 1,
           y: -20,
@@ -67,8 +79,11 @@ export default function Preloader() {
   const loadingText = "Bringing inspiration to life... one project at a time";
 
   return (
-    <>
-      <div className="pageLoader absolute h-screen w-full top-0 left-0 z-10 pointer-events-none overflow-hidden">
+    <div className="absolute h-screen w-full top-0 left-0 z-[5000]">
+      <div
+        onLoad={() => lenis?.stop()}
+        className="pageLoader absolute h-screen w-full top-0 left-0 z-30 pointer-events-none overflow-hidden"
+      >
         <div
           ref={left}
           className="absolute h-screen w-1/2 bg-white bottom-0 left-0"
@@ -80,7 +95,7 @@ export default function Preloader() {
       </div>
       <p
         ref={textContainer}
-        className="z-20 text-lg absolute top-0 left-0 w-full h-screen flex items-center pointer-events-none justify-center"
+        className="z-50 text-lg absolute top-0 left-0 w-full h-screen flex items-center pointer-events-none justify-center"
       >
         {loadingText.split("").map((char, idx) => (
           <span className="whitespace-pre opacity-0" key={idx}>
@@ -88,6 +103,6 @@ export default function Preloader() {
           </span>
         ))}
       </p>
-    </>
+    </div>
   );
 }

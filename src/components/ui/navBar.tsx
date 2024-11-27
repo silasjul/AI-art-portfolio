@@ -2,7 +2,7 @@ import { caviat } from "@/app/meta";
 
 export default function NavBar() {
   return (
-    <nav className="absolute top-5 flex items-center w-full py-2 px-10 text-white underline-offset-4">
+    <nav className="absolute top-5 flex items-center w-full py-2 px-10 text-white underline-offset-4 z-[300]">
       <a className={caviat.className + " text-3xl mr-auto"} href="#">
         Ascend
       </a>

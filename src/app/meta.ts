@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Inter, Caveat, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 
 export const inter = Inter({
   weight: ["300", "400", "500"],
@@ -10,6 +11,8 @@ export const inter = Inter({
 export const caviat = Caveat({ subsets: ["latin"] });
 
 export const playfair = Playfair_Display({ weight: "500", subsets: ["latin"] });
+
+export const loRes = localFont({ src: "./fonts/loRes.woff2" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
