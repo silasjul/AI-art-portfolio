@@ -33,7 +33,10 @@ export default function About() {
   });
 
   return (
-    <div ref={ref} className="absolute w-full h-screen bg-white flex z-[300]">
+    <div
+      ref={ref}
+      className="absolute w-full h-screen bg-white flex z-[300] overflow-hidden"
+    >
       <div ref={text} className="m-20">
         <h1 className="text-5xl font-medium mb-8">Hi, I'm Silas</h1>
         <div className="flex flex-col gap-5 text-xl leading-10 font-normal opacity-80">

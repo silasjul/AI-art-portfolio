@@ -11,7 +11,7 @@ export default function NavBar() {
           My Work
         </a>
         <a className="nav" href="#">
-          Pricing
+          Services
         </a>
         <a
           className="bg-gradient-to-r from-[#6FFF95] to-[#7AFFF4] text-transparent bg-clip-text font-medium underline nav"

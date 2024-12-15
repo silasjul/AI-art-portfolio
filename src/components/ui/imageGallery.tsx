@@ -47,8 +47,8 @@ export default function ImageGallery() {
           .timeline({
             scrollTrigger: {
               trigger: imageWrap, // Trigger the animation when this element enters the viewport
-              start: "top bottom+=10%", // Start when the top of the element is 10% past the bottom of the viewport
-              end: "bottom top-=25%", // End when the bottom of the element is 25% past the top of the viewport
+              start: "top bottom+=15%", // Start when the top of the element is 10% past the bottom of the viewport
+              end: "bottom top-=15%", // End when the bottom of the element is 25% past the top of the viewport
               scrub: true, // Smooth scrub animation
             },
           })
@@ -108,7 +108,7 @@ export default function ImageGallery() {
           x: "100vw", // Start the marquee off-screen to the right
         },
         {
-          x: "-100%", // Move the marquee to the left (completely across the screen)
+          x: "-125%", // Move the marquee to the left (completely across the screen)
           ease: "sine",
         }
       );
@@ -131,7 +131,7 @@ export default function ImageGallery() {
       </p>
       <div
         ref={imagesRef}
-        className="relative w-full h-full top-[10vh] flex flex-wrap justify-center gap-5 overflow-hidden"
+        className="relative w-full h-full top-[20vh] flex flex-wrap justify-center gap-5 overflow-hidden"
       >
         {imageList.map((image, id) => (
           <div
