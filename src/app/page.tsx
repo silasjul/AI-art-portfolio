@@ -1,4 +1,3 @@
-import { caviat, playfair } from "./meta";
 import Image from "next/image";
 import "./page.css";
 import Stairs from "@/components/ui/stairs";
@@ -7,16 +6,15 @@ import NavBar from "@/components/ui/navBar";
 import Title from "@/components/ui/title";
 import ImageGallery from "@/components/ui/imageGallery";
 import ContactBtn from "@/components/ui/contactBtn";
-import { ReactLenis, useLenis } from "lenis/react";
+import { ReactLenis } from "lenis/react";
 import About from "@/components/ui/about";
-import Services from "@/components/ui/services";
 
 export default function Home() {
   return (
     <>
       <ReactLenis root>
         <section className="hero w-full h-screen">
-          {/* <Preloader /> */}
+          <Preloader />
           <Image
             className="absolute left-1/2 translate-x-[-50%] top-0 z-[-5] pointer-events-none"
             src="/Ellipse.png"
@@ -37,7 +35,6 @@ export default function Home() {
         <section className="Images">
           <About />
           <ImageGallery />
-          <Services />
         </section>
       </ReactLenis>
     </>
