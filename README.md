@@ -30,5 +30,5 @@ A modern portfolio showcasing random digital art and design i generated with the
 
 -   **Framework**: [Next.js](https://nextjs.org/)
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
--   **Animations**: [GSAP](https://greensock.com/gsap/) and [Lenis](https://github.com/studio-freight/lenis)
+-   **Animations**: [GSAP](https://greensock.com/gsap/) and [Lenis](https://lenis.darkroom.engineering/)
 -   **3D Models**: [Spline](https://spline.design/)
